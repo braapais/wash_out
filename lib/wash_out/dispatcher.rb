@@ -76,7 +76,7 @@ module WashOut
       @namespace    = soap_config.namespace
       @name         = controller_path
       @service_name = soap_config.service_name
-      @soap_action_prefix = soap_action_prefix.service_name
+      @soap_action_prefix = soap_config.soap_action_prefix
 
       render :template => "wash_out/#{soap_config.wsdl_style}/wsdl", :layout => false,
              :content_type => 'text/xml'
