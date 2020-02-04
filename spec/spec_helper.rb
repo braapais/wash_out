@@ -32,7 +32,8 @@ RSpec.configure do |config|
     WashOut::Engine.config.wash_out = {
       snakecase_input: false,
       camelize_wsdl: false,
-      namespace: false
+      namespace: false,
+      soap_action_prefix: ''
     }
   end
 
@@ -69,7 +70,8 @@ def mock_controller(options = {}, &block)
     soap_service options.reverse_merge({
       snakecase_input: true,
       camelize_wsdl: true,
-      namespace: false
+      namespace: false,
+      soap_action_prefix: ''
     })
     class_exec &block if block
   }
